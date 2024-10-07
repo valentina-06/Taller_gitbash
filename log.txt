@@ -1,0 +1,705 @@
+
+usuario@DESKTOP-98R2AOQ MINGW64 ~
+$ mkdir Taller_gitbash
+
+usuario@DESKTOP-98R2AOQ MINGW64 ~
+$ mkdir Taller_gitbash
+mkdir: cannot create directory ‘Taller_gitbash’: File exists
+
+usuario@DESKTOP-98R2AOQ MINGW64 ~
+$ cd Taller_gitbash
+
+usuario@DESKTOP-98R2AOQ MINGW64 ~/Taller_gitbash
+$ git init Taller_gitbash
+Initialized empty Git repository in C:/Users/usuario/Taller_gitbash/Taller_gitbash/.git/
+
+usuario@DESKTOP-98R2AOQ MINGW64 ~/Taller_gitbash
+$ git confing --global user.name "valentina-06"
+git: 'confing' is not a git command. See 'git --help'.
+
+The most similar command is
+        config
+
+usuario@DESKTOP-98R2AOQ MINGW64 ~/Taller_gitbash
+$ git config --global user.name "valentina-06"
+
+usuario@DESKTOP-98R2AOQ MINGW64 ~/Taller_gitbash
+$ git config --global user.email "valentinaquinterov06@gmail.com"
+
+usuario@DESKTOP-98R2AOQ MINGW64 ~/Taller_gitbash
+$ git config --list
+diff.astextplain.textconv=astextplain
+filter.lfs.clean=git-lfs clean -- %f
+filter.lfs.smudge=git-lfs smudge -- %f
+filter.lfs.process=git-lfs filter-process
+filter.lfs.required=true
+http.sslbackend=openssl
+http.sslcainfo=C:/Program Files/Git/mingw64/etc/ssl/certs/ca-bundle.crt
+core.autocrlf=true
+core.fscache=true
+core.symlinks=false
+pull.rebase=false
+credential.helper=manager
+credential.https://dev.azure.com.usehttppath=true
+init.defaultbranch=master
+user.name=valentina-06
+user.email=valentinaquinterov06@gmail.com
+
+usuario@DESKTOP-98R2AOQ MINGW64 ~/Taller_gitbash
+$ git checkout -b feature
+fatal: not a git repository (or any of the parent directories): .git
+
+usuario@DESKTOP-98R2AOQ MINGW64 ~/Taller_gitbash
+$ ^C
+
+usuario@DESKTOP-98R2AOQ MINGW64 ~/Taller_gitbash
+$ git branch
+fatal: not a git repository (or any of the parent directories): .git
+
+usuario@DESKTOP-98R2AOQ MINGW64 ~/Taller_gitbash
+$ git --list
+unknown option: --list
+usage: git [-v | --version] [-h | --help] [-C <path>] [-c <name>=<value>]
+           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]
+           [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--bare]
+           [--git-dir=<path>] [--work-tree=<path>] [--namespace=<name>]
+           [--config-env=<name>=<envvar>] <command> [<args>]
+
+usuario@DESKTOP-98R2AOQ MINGW64 ~/Taller_gitbash
+$ ls -l
+total 0
+drwxr-xr-x 1 usuario 197609 0 Oct  6 20:25 Taller_gitbash/
+
+usuario@DESKTOP-98R2AOQ MINGW64 ~/Taller_gitbash
+$ git init
+Initialized empty Git repository in C:/Users/usuario/Taller_gitbash/.git/
+
+usuario@DESKTOP-98R2AOQ MINGW64 ~/Taller_gitbash (master)
+$ git checkout -b feature
+Switched to a new branch 'feature'
+
+usuario@DESKTOP-98R2AOQ MINGW64 ~/Taller_gitbash (feature)
+$ git branch
+
+usuario@DESKTOP-98R2AOQ MINGW64 ~/Taller_gitbash (feature)
+$ git checkout master
+error: pathspec 'master' did not match any file(s) known to git
+
+usuario@DESKTOP-98R2AOQ MINGW64 ~/Taller_gitbash (feature)
+$ git checkout -b master
+Switched to a new branch 'master'
+
+usuario@DESKTOP-98R2AOQ MINGW64 ~/Taller_gitbash (master)
+$ git branch
+
+usuario@DESKTOP-98R2AOQ MINGW64 ~/Taller_gitbash (master)
+$ touch index.html
+
+usuario@DESKTOP-98R2AOQ MINGW64 ~/Taller_gitbash (master)
+$ git status
+On branch master
+
+No commits yet
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        Taller_gitbash/
+        index.html
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+usuario@DESKTOP-98R2AOQ MINGW64 ~/Taller_gitbash (master)
+$ git add index.html
+
+usuario@DESKTOP-98R2AOQ MINGW64 ~/Taller_gitbash (master)
+$ git commit -m "mi primer commit"
+[master (root-commit) 20d5cc9] mi primer commit
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 index.html
+
+usuario@DESKTOP-98R2AOQ MINGW64 ~/Taller_gitbash (master)
+$ git status
+On branch master
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        Taller_gitbash/
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+usuario@DESKTOP-98R2AOQ MINGW64 ~/Taller_gitbash (master)
+$ git branch
+* master
+
+usuario@DESKTOP-98R2AOQ MINGW64 ~/Taller_gitbash (master)
+$ git checkout -b feature
+Switched to a new branch 'feature'
+
+usuario@DESKTOP-98R2AOQ MINGW64 ~/Taller_gitbash (feature)
+$ echo "Texto agregado en rama feature" >> archivo.txt
+
+usuario@DESKTOP-98R2AOQ MINGW64 ~/Taller_gitbash (feature)
+$ git add archivo.txt
+warning: in the working copy of 'archivo.txt', LF will be replaced by CRLF the next time Git touches it
+
+usuario@DESKTOP-98R2AOQ MINGW64 ~/Taller_gitbash (feature)
+$ git commit -m "Commit inicial"
+[feature 06bd1fb] Commit inicial
+ 1 file changed, 1 insertion(+)
+ create mode 100644 archivo.txt
+
+usuario@DESKTOP-98R2AOQ MINGW64 ~/Taller_gitbash (feature)
+$ git status
+On branch feature
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        Taller_gitbash/
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+usuario@DESKTOP-98R2AOQ MINGW64 ~/Taller_gitbash (feature)
+$ echo "nuevo comentario" >> archivo.txt
+
+usuario@DESKTOP-98R2AOQ MINGW64 ~/Taller_gitbash (feature)
+$ git commit -am "second commit in feature"
+warning: in the working copy of 'archivo.txt', LF will be replaced by CRLF the next time Git touches it
+[feature d8d3418] second commit in feature
+ 1 file changed, 1 insertion(+)
+
+usuario@DESKTOP-98R2AOQ MINGW64 ~/Taller_gitbash (feature)
+$ git checkout master
+Switched to branch 'master'
+
+usuario@DESKTOP-98R2AOQ MINGW64 ~/Taller_gitbash (master)
+$ git merge feature
+Updating 20d5cc9..d8d3418
+Fast-forward
+ archivo.txt | 2 ++
+ 1 file changed, 2 insertions(+)
+ create mode 100644 archivo.txt
+
+usuario@DESKTOP-98R2AOQ MINGW64 ~/Taller_gitbash (master)
+$ ls -l
+total 1
+drwxr-xr-x 1 usuario 197609  0 Oct  6 20:25 Taller_gitbash/
+-rw-r--r-- 1 usuario 197609 50 Oct  6 20:59 archivo.txt
+-rw-r--r-- 1 usuario 197609  0 Oct  6 20:45 index.html
+
+usuario@DESKTOP-98R2AOQ MINGW64 ~/Taller_gitbash (master)
+$ git log --oneline
+d8d3418 (HEAD -> master, feature) second commit in feature
+06bd1fb Commit inicial
+20d5cc9 mi primer commit
+
+usuario@DESKTOP-98R2AOQ MINGW64 ~/Taller_gitbash (master)
+$ git reset --hard ^C
+
+usuario@DESKTOP-98R2AOQ MINGW64 ~/Taller_gitbash (master)
+$ git reset --hard d8d3418
+HEAD is now at d8d3418 second commit in feature
+
+usuario@DESKTOP-98R2AOQ MINGW64 ~/Taller_gitbash (master)
+$ git rebase feature
+Current branch master is up to date.
+
+usuario@DESKTOP-98R2AOQ MINGW64 ~/Taller_gitbash (master)
+$ git branch
+  feature
+* master
+
+usuario@DESKTOP-98R2AOQ MINGW64 ~/Taller_gitbash (master)
+$ git checkout -b hotfix
+Switched to a new branch 'hotfix'
+
+usuario@DESKTOP-98R2AOQ MINGW64 ~/Taller_gitbash (hotfix)
+$ echo "correcion urgente" >> archivo.txt
+
+usuario@DESKTOP-98R2AOQ MINGW64 ~/Taller_gitbash (hotfix)
+$ git commit -am "Hotfix"
+warning: in the working copy of 'archivo.txt', LF will be replaced by CRLF the next time Git touches it
+[hotfix 6943b99] Hotfix
+ 1 file changed, 1 insertion(+)
+
+usuario@DESKTOP-98R2AOQ MINGW64 ~/Taller_gitbash (hotfix)
+$ git branch
+  feature
+* hotfix
+  master
+
+usuario@DESKTOP-98R2AOQ MINGW64 ~/Taller_gitbash (hotfix)
+$ git log --oneline
+6943b99 (HEAD -> hotfix) Hotfix
+d8d3418 (master, feature) second commit in feature
+06bd1fb Commit inicial
+20d5cc9 mi primer commit
+
+usuario@DESKTOP-98R2AOQ MINGW64 ~/Taller_gitbash (hotfix)
+$ git checkout master
+Switched to branch 'master'
+
+usuario@DESKTOP-98R2AOQ MINGW64 ~/Taller_gitbash (master)
+$ git cherry pick hotfix
+fatal: unknown commit pick
+
+usuario@DESKTOP-98R2AOQ MINGW64 ~/Taller_gitbash (master)
+$ git cherry-pick hotfix
+[master 05aaa23] Hotfix
+ Date: Sun Oct 6 21:15:31 2024 -0500
+ 1 file changed, 1 insertion(+)
+
+usuario@DESKTOP-98R2AOQ MINGW64 ~/Taller_gitbash (master)
+$ git reflog
+05aaa23 (HEAD -> master) HEAD@{0}: cherry-pick: Hotfix
+d8d3418 (feature) HEAD@{1}: checkout: moving from hotfix to master
+6943b99 (hotfix) HEAD@{2}: commit: Hotfix
+d8d3418 (feature) HEAD@{3}: checkout: moving from master to hotfix
+d8d3418 (feature) HEAD@{4}: reset: moving to d8d3418
+d8d3418 (feature) HEAD@{5}: merge feature: Fast-forward
+20d5cc9 HEAD@{6}: checkout: moving from feature to master
+d8d3418 (feature) HEAD@{7}: commit: second commit in feature
+06bd1fb HEAD@{8}: commit: Commit inicial
+20d5cc9 HEAD@{9}: checkout: moving from master to feature
+20d5cc9 HEAD@{10}: commit (initial): mi primer commit
+
+usuario@DESKTOP-98R2AOQ MINGW64 ~/Taller_gitbash (master)
+$ git checkout feature
+Switched to branch 'feature'
+
+usuario@DESKTOP-98R2AOQ MINGW64 ~/Taller_gitbash (feature)
+$ echo "Cambio en feature" > conflicto.txt
+
+usuario@DESKTOP-98R2AOQ MINGW64 ~/Taller_gitbash (feature)
+$ git commit -am "Cambio en feature"
+On branch feature
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        Taller_gitbash/
+        conflicto.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+usuario@DESKTOP-98R2AOQ MINGW64 ~/Taller_gitbash (feature)
+$ git log --oneline
+d8d3418 (HEAD -> feature) second commit in feature
+06bd1fb Commit inicial
+20d5cc9 mi primer commit
+
+usuario@DESKTOP-98R2AOQ MINGW64 ~/Taller_gitbash (feature)
+$ git add conflicto.txt
+warning: in the working copy of 'conflicto.txt', LF will be replaced by CRLF the next time Git touches it
+
+usuario@DESKTOP-98R2AOQ MINGW64 ~/Taller_gitbash (feature)
+$ git commit -m "Cambio en feature"
+[feature bd44cad] Cambio en feature
+ 1 file changed, 1 insertion(+)
+ create mode 100644 conflicto.txt
+
+usuario@DESKTOP-98R2AOQ MINGW64 ~/Taller_gitbash (feature)
+$ git log --oneline
+bd44cad (HEAD -> feature) Cambio en feature
+d8d3418 second commit in feature
+06bd1fb Commit inicial
+20d5cc9 mi primer commit
+
+usuario@DESKTOP-98R2AOQ MINGW64 ~/Taller_gitbash (feature)
+$ git checkout master
+Switched to branch 'master'
+
+usuario@DESKTOP-98R2AOQ MINGW64 ~/Taller_gitbash (master)
+$ git add conflicto.txt
+fatal: pathspec 'conflicto.txt' did not match any files
+
+usuario@DESKTOP-98R2AOQ MINGW64 ~/Taller_gitbash (master)
+$ git log --oneline
+05aaa23 (HEAD -> master) Hotfix
+d8d3418 second commit in feature
+06bd1fb Commit inicial
+20d5cc9 mi primer commit
+
+usuario@DESKTOP-98R2AOQ MINGW64 ~/Taller_gitbash (master)
+$ git commit -m "cambio en master"
+On branch master
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        Taller_gitbash/
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+usuario@DESKTOP-98R2AOQ MINGW64 ~/Taller_gitbash (master)
+$ git log --oneline
+05aaa23 (HEAD -> master) Hotfix
+d8d3418 second commit in feature
+06bd1fb Commit inicial
+20d5cc9 mi primer commit
+
+usuario@DESKTOP-98R2AOQ MINGW64 ~/Taller_gitbash (master)
+$ ^C
+
+usuario@DESKTOP-98R2AOQ MINGW64 ~/Taller_gitbash (master)
+$ echo "cambio en master" > conflicto.txt
+
+usuario@DESKTOP-98R2AOQ MINGW64 ~/Taller_gitbash (master)
+$ git add conflicto.txt
+warning: in the working copy of 'conflicto.txt', LF will be replaced by CRLF the next time Git touches it
+
+usuario@DESKTOP-98R2AOQ MINGW64 ~/Taller_gitbash (master)
+$ git commit -m "cambio en master"
+[master 9e17e7c] cambio en master
+ 1 file changed, 1 insertion(+)
+ create mode 100644 conflicto.txt
+
+usuario@DESKTOP-98R2AOQ MINGW64 ~/Taller_gitbash (master)
+$ git log --oneline
+9e17e7c (HEAD -> master) cambio en master
+05aaa23 Hotfix
+d8d3418 second commit in feature
+06bd1fb Commit inicial
+20d5cc9 mi primer commit
+
+usuario@DESKTOP-98R2AOQ MINGW64 ~/Taller_gitbash (master)
+$ git revert -m 9e17e7c
+error: option `mainline' expects a number greater than zero
+
+usuario@DESKTOP-98R2AOQ MINGW64 ~/Taller_gitbash (master)
+$ git revert -m l 9e17e7c
+error: option `mainline' expects a number greater than zero
+
+usuario@DESKTOP-98R2AOQ MINGW64 ~/Taller_gitbash (master)
+$ git revert -m 1 9e17e7c
+hint: Waiting for your editor to close the file...       0 [sig] bash 1601! sigpacket::process: Suppressing signal 18 to win32 process (pid 9736)
+                                  2526352 [sig] bash 1601! sigpacket::process: Suppressing signal 18 to win32 process (pid 9736)
+                 3366702 [sig] bash 1601! sigpacket::process: Suppressing signal 18 to win32 process (pid 9736)
+                                                                                                              5651592 [sig] bash 1601! sigpacket::process: Suppressing signal 18 to win32 process (pid 9736)
+                                                                                             25208320 [sig] bash 1601! sigpacket::process: Suppressing signal 18 to win32 process (pid 9736)
+                                                                             26247193 [sig] bash 1601! sigpacket::process: Suppressing signal 18 to win32 process (pid 9736)
+                                                             26899809 [sig] bash 1601! sigpacket::process: Suppressing signal 18 to win32 process (pid 9736)
+                                             29210402 [sig] bash 1601! sigpacket::process: Suppressing signal 18 to win32 process (pid 9736)
+                             46602219 [sig] bash 1601! sigpacket::process: Suppressing signal 18 to win32 process (pid 9736)
+             60123327 [sig] bash 1601! sigpacket::process: Suppressing signal 18 to win32 process (pid 9736)
+                                                                                                            64885140 [sig] bash 1601! sigpacket::process: Suppressing signal 18 to win32 process (pid 9736)
+                                                                                            108623910 [sig] bash 1601! sigpacket::process: Suppressing signal 18 to win32 process (pid 9736)
+                                                                             109557535 [sig] bash 1601! sigpacket::process: Suppressing signal 18 to win32 process (pid 9736)
+                                                              111778483 [sig] bash 1601! sigpacket::process: Suppressing signal 18 to win32 process (pid 9736)
+                                               112103203 [sig] bash 1601! sigpacket::process: Suppressing signal 18 to win32 process (pid 9736)
+                                112398326 [sig] bash 1601! sigpacket::process: Suppressing signal 18 to win32 process (pid 9736)
+                 116486944 [sig] bash 1601! sigpacket::process: Suppressing signal 18 to win32 process (pid 9736)
+  125260403 [sig] bash 1601! sigpacket::process: Suppressing signal 18 to win32 process (pid 9736)
+                                                                                                  230676325 [sig] bash 1601! sigpacket::process: Suppressing signal 18 to win32 process (pid 9736)
+                                                                                   231672875 [sig] bash 1601! sigpacket::process: Suppressing signal 18 to win32 process (pid 9736)
+[master c710e23] Revert "cambio en master"
+ 1 file changed, 1 deletion(-)
+ delete mode 100644 conflicto.txt
+
+usuario@DESKTOP-98R2AOQ MINGW64 ~/Taller_gitbash (master)
+$ ^C
+
+usuario@DESKTOP-98R2AOQ MINGW64 ~/Taller_gitbash (master)
+$ git add .
+error: 'Taller_gitbash/' does not have a commit checked out
+fatal: adding files failed
+
+usuario@DESKTOP-98R2AOQ MINGW64 ~/Taller_gitbash (master)
+$ git push origin master
+fatal: 'origin' does not appear to be a git repository
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+
+usuario@DESKTOP-98R2AOQ MINGW64 ~/Taller_gitbash (master)
+$ git status
+On branch master
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        Taller_gitbash/
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+usuario@DESKTOP-98R2AOQ MINGW64 ~/Taller_gitbash (master)
+$ git add .
+error: 'Taller_gitbash/' does not have a commit checked out
+fatal: adding files failed
+
+usuario@DESKTOP-98R2AOQ MINGW64 ~/Taller_gitbash (master)
+$ git commit -m "añadiendo archivos"
+On branch master
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        Taller_gitbash/
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+usuario@DESKTOP-98R2AOQ MINGW64 ~/Taller_gitbash (master)
+$ git branch
+  feature
+  hotfix
+* master
+
+usuario@DESKTOP-98R2AOQ MINGW64 ~/Taller_gitbash (master)
+$ git checkout feature
+Switched to branch 'feature'
+
+usuario@DESKTOP-98R2AOQ MINGW64 ~/Taller_gitbash (feature)
+$ git checkout master
+Switched to branch 'master'
+
+usuario@DESKTOP-98R2AOQ MINGW64 ~/Taller_gitbash (master)
+$ git merge feature
+Merge made by the 'ort' strategy.
+ conflicto.txt | 1 +
+ 1 file changed, 1 insertion(+)
+ create mode 100644 conflicto.txt
+
+usuario@DESKTOP-98R2AOQ MINGW64 ~/Taller_gitbash (master)
+$ rm conflicto.txt
+
+usuario@DESKTOP-98R2AOQ MINGW64 ~/Taller_gitbash (master)
+$ git checkout feature
+Switched to branch 'feature'
+D       conflicto.txt
+
+usuario@DESKTOP-98R2AOQ MINGW64 ~/Taller_gitbash (feature)
+$ rm conflicto.txt
+rm: cannot remove 'conflicto.txt': No such file or directory
+
+usuario@DESKTOP-98R2AOQ MINGW64 ~/Taller_gitbash (feature)
+$ ls -l
+total 1
+drwxr-xr-x 1 usuario 197609  0 Oct  6 20:25 Taller_gitbash/
+-rw-r--r-- 1 usuario 197609 50 Oct  6 23:48 archivo.txt
+-rw-r--r-- 1 usuario 197609  0 Oct  6 20:45 index.html
+
+usuario@DESKTOP-98R2AOQ MINGW64 ~/Taller_gitbash (feature)
+$ echo "cambio en feature" > conflicto.txt
+
+usuario@DESKTOP-98R2AOQ MINGW64 ~/Taller_gitbash (feature)
+$ ls -l
+total 2
+drwxr-xr-x 1 usuario 197609  0 Oct  6 20:25 Taller_gitbash/
+-rw-r--r-- 1 usuario 197609 50 Oct  6 23:48 archivo.txt
+-rw-r--r-- 1 usuario 197609 18 Oct  6 23:49 conflicto.txt
+-rw-r--r-- 1 usuario 197609  0 Oct  6 20:45 index.html
+
+usuario@DESKTOP-98R2AOQ MINGW64 ~/Taller_gitbash (feature)
+$ git add conflicto.txt
+warning: in the working copy of 'conflicto.txt', LF will be replaced by CRLF the next time Git touches it
+
+usuario@DESKTOP-98R2AOQ MINGW64 ~/Taller_gitbash (feature)
+$ git commit -m "cambio en feature"
+[feature 7cc5f31] cambio en feature
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+usuario@DESKTOP-98R2AOQ MINGW64 ~/Taller_gitbash (feature)
+$ git log --oneline
+7cc5f31 (HEAD -> feature) cambio en feature
+bd44cad Cambio en feature
+d8d3418 second commit in feature
+06bd1fb Commit inicial
+20d5cc9 mi primer commit
+
+usuario@DESKTOP-98R2AOQ MINGW64 ~/Taller_gitbash (feature)
+$ git checkout master
+Switched to branch 'master'
+
+usuario@DESKTOP-98R2AOQ MINGW64 ~/Taller_gitbash (master)
+$ echo "cambio en master" > conflicto.txt
+
+usuario@DESKTOP-98R2AOQ MINGW64 ~/Taller_gitbash (master)
+$ ls -l
+total 2
+drwxr-xr-x 1 usuario 197609  0 Oct  6 20:25 Taller_gitbash/
+-rw-r--r-- 1 usuario 197609 69 Oct  6 23:51 archivo.txt
+-rw-r--r-- 1 usuario 197609 17 Oct  6 23:51 conflicto.txt
+-rw-r--r-- 1 usuario 197609  0 Oct  6 20:45 index.html
+
+usuario@DESKTOP-98R2AOQ MINGW64 ~/Taller_gitbash (master)
+$ git add conflicto.txt
+warning: in the working copy of 'conflicto.txt', LF will be replaced by CRLF the next time Git touches it
+
+usuario@DESKTOP-98R2AOQ MINGW64 ~/Taller_gitbash (master)
+$ git commit -m "cambio en master"
+[master 33eadb5] cambio en master
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+usuario@DESKTOP-98R2AOQ MINGW64 ~/Taller_gitbash (master)
+$ git log --oneline
+33eadb5 (HEAD -> master) cambio en master
+57bad09 Merge branch 'feature'
+c710e23 Revert "cambio en master"
+9e17e7c cambio en master
+bd44cad Cambio en feature
+05aaa23 Hotfix
+d8d3418 second commit in feature
+06bd1fb Commit inicial
+20d5cc9 mi primer commit
+
+usuario@DESKTOP-98R2AOQ MINGW64 ~/Taller_gitbash (master)
+$ git merge feature
+Auto-merging conflicto.txt
+CONFLICT (content): Merge conflict in conflicto.txt
+Automatic merge failed; fix conflicts and then commit the result.
+
+usuario@DESKTOP-98R2AOQ MINGW64 ~/Taller_gitbash (master|MERGING)
+$ git add conflicto.txt
+
+usuario@DESKTOP-98R2AOQ MINGW64 ~/Taller_gitbash (master|MERGING)
+$ git commit -m "conflicto resuelto"
+[master efc7536] conflicto resuelto
+
+usuario@DESKTOP-98R2AOQ MINGW64 ~/Taller_gitbash (master)
+$ git fetch origin
+fatal: 'origin' does not appear to be a git repository
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+
+usuario@DESKTOP-98R2AOQ MINGW64 ~/Taller_gitbash (master)
+$ git remote add origin https://github.com/valentina-06/Taller_gitbash.git
+
+usuario@DESKTOP-98R2AOQ MINGW64 ~/Taller_gitbash (master)
+$ git fetch origin
+remote: Enumerating objects: 4, done.
+remote: Counting objects: 100% (4/4), done.
+remote: Compressing objects: 100% (3/3), done.
+remote: Total 4 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)
+Unpacking objects: 100% (4/4), 12.74 KiB | 1.16 MiB/s, done.
+From https://github.com/valentina-06/Taller_gitbash
+ * [new branch]      main       -> origin/main
+
+usuario@DESKTOP-98R2AOQ MINGW64 ~/Taller_gitbash (master)
+$ git checkout -b main origin/main
+Switched to a new branch 'main'
+branch 'main' set up to track 'origin/main'.
+
+usuario@DESKTOP-98R2AOQ MINGW64 ~/Taller_gitbash (main)
+$ git merge master --allow--unrelated-histories
+error: unknown option `allow--unrelated-histories'
+usage: git merge [<options>] [<commit>...]
+   or: git merge --abort
+   or: git merge --continue
+
+    -n                    do not show a diffstat at the end of the merge
+    --stat                show a diffstat at the end of the merge
+    --summary             (synonym to --stat)
+    --log[=<n>]           add (at most <n>) entries from shortlog to merge commit message
+    --squash              create a single commit instead of doing a merge
+    --commit              perform a commit if the merge succeeds (default)
+    -e, --edit            edit message before committing
+    --cleanup <mode>      how to strip spaces and #comments from message
+    --ff                  allow fast-forward (default)
+    --ff-only             abort if fast-forward is not possible
+    --rerere-autoupdate   update the index with reused conflict resolution if possible
+    --verify-signatures   verify that the named commit has a valid GPG signature
+    -s, --strategy <strategy>
+                          merge strategy to use
+    -X, --strategy-option <option=value>
+                          option for selected merge strategy
+    -m, --message <message>
+                          merge commit message (for a non-fast-forward merge)
+    -F, --file <path>     read message from file
+    --into-name <name>    use <name> instead of the real target
+    -v, --verbose         be more verbose
+    -q, --quiet           be more quiet
+    --abort               abort the current in-progress merge
+    --quit                --abort but leave index and working tree alone
+    --continue            continue the current in-progress merge
+    --allow-unrelated-histories
+                          allow merging unrelated histories
+    --progress            force progress reporting
+    -S, --gpg-sign[=<key-id>]
+                          GPG sign commit
+    --autostash           automatically stash/stash pop before and after
+    --overwrite-ignore    update ignored files (default)
+    --signoff             add a Signed-off-by trailer
+    --no-verify           bypass pre-merge-commit and commit-msg hooks
+
+
+usuario@DESKTOP-98R2AOQ MINGW64 ~/Taller_gitbash (main)
+$ git merge master --allow--unrelated-histories
+error: unknown option `allow--unrelated-histories'
+usage: git merge [<options>] [<commit>...]
+   or: git merge --abort
+   or: git merge --continue
+
+    -n                    do not show a diffstat at the end of the merge
+    --stat                show a diffstat at the end of the merge
+    --summary             (synonym to --stat)
+    --log[=<n>]           add (at most <n>) entries from shortlog to merge commit message
+    --squash              create a single commit instead of doing a merge
+    --commit              perform a commit if the merge succeeds (default)
+    -e, --edit            edit message before committing
+    --cleanup <mode>      how to strip spaces and #comments from message
+    --ff                  allow fast-forward (default)
+    --ff-only             abort if fast-forward is not possible
+    --rerere-autoupdate   update the index with reused conflict resolution if possible
+    --verify-signatures   verify that the named commit has a valid GPG signature
+    -s, --strategy <strategy>
+                          merge strategy to use
+    -X, --strategy-option <option=value>
+                          option for selected merge strategy
+    -m, --message <message>
+                          merge commit message (for a non-fast-forward merge)
+    -F, --file <path>     read message from file
+    --into-name <name>    use <name> instead of the real target
+    -v, --verbose         be more verbose
+    -q, --quiet           be more quiet
+    --abort               abort the current in-progress merge
+    --quit                --abort but leave index and working tree alone
+    --continue            continue the current in-progress merge
+    --allow-unrelated-histories
+                          allow merging unrelated histories
+    --progress            force progress reporting
+    -S, --gpg-sign[=<key-id>]
+                          GPG sign commit
+    --autostash           automatically stash/stash pop before and after
+    --overwrite-ignore    update ignored files (default)
+    --signoff             add a Signed-off-by trailer
+    --no-verify           bypass pre-merge-commit and commit-msg hooks
+
+
+usuario@DESKTOP-98R2AOQ MINGW64 ~/Taller_gitbash (main)
+$ git merge master
+fatal: refusing to merge unrelated histories
+
+usuario@DESKTOP-98R2AOQ MINGW64 ~/Taller_gitbash (main)
+$ git merge master --allow-unrelated-histories
+Merge made by the 'ort' strategy.
+ archivo.txt   | 3 +++
+ conflicto.txt | 4 ++++
+ index.html    | 0
+ 3 files changed, 7 insertions(+)
+ create mode 100644 archivo.txt
+ create mode 100644 conflicto.txt
+ create mode 100644 index.html
+
+usuario@DESKTOP-98R2AOQ MINGW64 ~/Taller_gitbash (main)
+$ git push origin main
+
+Enumerating objects: 31, done.
+Counting objects: 100% (31/31), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (22/22), done.
+Writing objects: 100% (30/30), 2.96 KiB | 1.48 MiB/s, done.
+Total 30 (delta 6), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (6/6), done.
+To https://github.com/valentina-06/Taller_gitbash.git
+   ccb0885..b8b12d3  main -> main
+
+usuario@DESKTOP-98R2AOQ MINGW64 ~/Taller_gitbash (main)
+$ git pull origin main
+From https://github.com/valentina-06/Taller_gitbash
+ * branch            main       -> FETCH_HEAD
+Already up to date.
+
+usuario@DESKTOP-98R2AOQ MINGW64 ~/Taller_gitbash (main)
+$ ls -l
+total 39
+-rw-r--r-- 1 usuario 197609 35823 Oct  7 00:00 LICENSE
+-rw-r--r-- 1 usuario 197609    43 Oct  7 00:00 README.md
+drwxr-xr-x 1 usuario 197609     0 Oct  6 20:25 Taller_gitbash/
+-rw-r--r-- 1 usuario 197609    69 Oct  7 00:05 archivo.txt
+-rw-r--r-- 1 usuario 197609    41 Oct  7 00:05 conflicto.txt
+-rw-r--r-- 1 usuario 197609     0 Oct  7 00:05 index.html
+
+usuario@DESKTOP-98R2AOQ MINGW64 ~/Taller_gitbash (main)
+$
